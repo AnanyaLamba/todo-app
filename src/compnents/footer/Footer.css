@@ -1,0 +1,24 @@
+/* Flexbox for buttons */
+.footer-container .button-group {
+  display: flex;
+  justify-content: center; /* Center aligns buttons horizontally */
+  gap: 15px; /* Adds spacing between buttons */
+}
+
+/* Smaller Footer Buttons */
+.footer-container button {
+  display: inline-block;
+  width: auto;
+  padding: 6px 12px;
+  font-size: 0.9em;
+  border: none;
+  border-radius: 5px;
+  background-color: #5a67d8;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer-container button:hover {
+  background-color: #434cbf;
+}

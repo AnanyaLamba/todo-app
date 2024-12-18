@@ -1,11 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-
-import TodoForm from "./compnents/todoform";
+import Footer from "./compnents/footer/Footer";
+import TodoForm from "./compnents/todoform/todoform";
 function App() {
   
   return (
-    <TodoForm />
+  <>
+  <TodoForm />
+  {/* <Footer /> */}
+  </>
+    
   );
 }
 

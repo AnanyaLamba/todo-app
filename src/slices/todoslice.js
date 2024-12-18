@@ -14,13 +14,13 @@ const todoSlice  = createSlice({
         tasklist: 
         [
         {
-            id:0 , task: "todo" , status:"completed"
+            id:0 , task: "todo" , status:"completed" , color:"default"
         },
         {
-            id:1 , task:"react" , status:"incompleted"
+            id:1 , task:"react" , status:"incompleted" , color:"default"
         },
         {
-            id:2 , task:"soup" , status:"completed"
+            id:2 , task:"soup" , status:"completed" , color:"default"
         }
         ],
     }, 
@@ -31,9 +31,9 @@ const todoSlice  = createSlice({
                 id:generateNewId(state.tasklist),
                 task:action.payload,
                 completed:false,
-
+                
             };
-            // alll the entery are pushed into tasklist array in this format
+            // all the entery are pushed into tasklist array in this format
             state.tasklist.push(newTodo);
         },
 
@@ -48,9 +48,25 @@ const todoSlice  = createSlice({
                 todo.completed = !todo.completed;
             }
         },
+        markAllCompleted:(state) =>{
+            state.tasklist.forEach((task) =>{
+                task.completed = true
+            });
+        },
+        clearCompleted:(state) =>{
+            state.tasklist = state.tasklist.filter((task) => !task.completed);
+        },
+        updatedColor:(state , action) =>{
+            const{id , color} = action.payload;
+            const task = state.tasklist.find((task) => task.id === id);
+            if(task)
+            {
+                task.color = color;
+            }
+        }
     },
 });
 
-export const {addTodo , deleteTask , toggleTodo} = todoSlice.actions;
+export const {addTodo , deleteTask , toggleTodo , markAllCompleted , clearCompleted , updatedColor} = todoSlice.actions;
 
 export default todoSlice.reducer;
