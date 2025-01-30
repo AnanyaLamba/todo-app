@@ -1,15 +1,12 @@
-import { useState } from "react";
-import "./App.css";
-import Footer from "./compnents/footer/Footer";
-import TodoForm from "./compnents/todoform/todoform";
+import Header from "./components/Header/Header";
+import MainDisplay from "./components/MainDisplay/MainDisplay";
+
 function App() {
-  
   return (
-  <>
-  <TodoForm />
-  {/* <Footer /> */}
-  </>
-    
+    <div className="">
+      <Header />
+      <MainDisplay />
+    </div>
   );
 }
 
